@@ -2,11 +2,13 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class Rail_EnemySpawner : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rail_Enemy m_enemyToSpawn;
+    [SerializeField] private SplineContainer m_splineContainer;
 
     [Header("Values")]
     [SerializeField] private int m_maxEnemyToSpawn = 10;
@@ -44,5 +46,6 @@ public class Rail_EnemySpawner : MonoBehaviour
         Rail_Enemy newEnemy = Instantiate(m_enemyToSpawn);
         newEnemy.transform.position = transform.position;
         m_spawnedEnemies.Add(newEnemy);
+        newEnemy.Init(m_splineContainer);
     }
 }

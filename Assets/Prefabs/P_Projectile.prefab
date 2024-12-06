@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 3420751601862189538}
   - component: {fileID: 581938367606463558}
   - component: {fileID: 8840284076588390304}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DamageTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rb: {fileID: 5386812685535090102}
-  m_speed: 10
+  m_speed: 25
   m_shootingDelay: 0.2
   m_chargeDuration: 1
   m_speedMultiplier: {x: 70, y: 100}
