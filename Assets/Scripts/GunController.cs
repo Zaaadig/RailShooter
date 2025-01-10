@@ -50,6 +50,7 @@ public class GunController : MonoBehaviour
         // faire en sorte qu'il s'appliquent que sur certaines layers
         {
             m_targetPos = hit.point;
+            
         }
         // si on ne touche rien il faut quand même qu'on puisse visé dans le vide et tirer :
         else
