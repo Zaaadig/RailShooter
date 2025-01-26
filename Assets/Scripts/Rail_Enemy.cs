@@ -12,7 +12,16 @@ public class Rail_Enemy : MonoBehaviour
     [SerializeField] private ParticleSystem m_onDeathVFX;
 
     private SplineContainer m_splineContainer;
+    private bool m_isDead = false;
 
+    public float Health { get => m_health; set => m_health = value; }
+    public bool IsDead { get => m_isDead; set => m_isDead = value; }
+
+    private void Start()
+    {
+        m_isDead = false;
+        
+    }
     public void Init(SplineContainer spline)
     {
         m_splineContainer = spline;
@@ -26,6 +35,7 @@ public class Rail_Enemy : MonoBehaviour
         if (m_health <= 0)
         {
             m_health = 0;
+            m_isDead = true;
             DestroyEnemy();
         }
     }
@@ -37,6 +47,7 @@ public class Rail_Enemy : MonoBehaviour
             m_onDeathVFX.transform.parent = null;
             m_onDeathVFX.Play();
         }
-        Destroy(gameObject);
+        this.gameObject.SetActive(false);
+        
     }
 }
