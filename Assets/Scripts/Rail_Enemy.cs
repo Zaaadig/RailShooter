@@ -7,6 +7,7 @@ public class Rail_Enemy : MonoBehaviour
     [SerializeField] private SplineAnimate m_splineAnimate;
     [Header("Values")]
     [SerializeField] private float m_health;
+    [SerializeField] private int m_score;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem m_onDeathVFX;
@@ -47,6 +48,8 @@ public class Rail_Enemy : MonoBehaviour
             m_onDeathVFX.transform.parent = null;
             m_onDeathVFX.Play();
         }
+
+        GameManager.AddScore(m_score);
         this.gameObject.SetActive(false);
         
     }
